@@ -11,7 +11,7 @@ namespace ScreenshotServiceApp.Model.Input.KeyInput
         {
             if (wParam == (IntPtr)WM_KEYDOWN)// when the key is pushed down
                 return new CKeyDownAnalyzer();
-            else if (wParam == (IntPtr)WM_KEYDOWN)
+            else if (wParam == (IntPtr)WM_KEYUP)
                 return new CKeyReleasedAnalyzer();
             else return null;
         }
