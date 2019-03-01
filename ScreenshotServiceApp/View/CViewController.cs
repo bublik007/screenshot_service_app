@@ -37,7 +37,7 @@ namespace ScreenshotServiceApp.View
         private static void ShowWorkstationsSnaphots(CPCScreenshot snapshot,
             Screen[] AllSystemScreens)
         {
-            foreach (CPCScreenshot.CScreenSnapshot s in snapshot)
+            foreach (CPCScreenshot.CScreenshot s in snapshot)
             {
                 try
                 {

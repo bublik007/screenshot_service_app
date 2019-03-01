@@ -6,7 +6,7 @@ namespace ScreenshotServiceApp.Model
 {
     class CPCScreenshot : IEnumerable
     {
-        public class CScreenSnapshot 
+        public class CScreenshot 
         {
             public int ScreenNumber { get; set; }
             public Bitmap ScreenBitmap { get; set; }
@@ -16,11 +16,11 @@ namespace ScreenshotServiceApp.Model
         { }
 
         // 1. array of images/URLs from each screen of the computer
-        private List<CScreenSnapshot> _arrayOfScreenshots = new List<CScreenSnapshot>();
+        private List<CScreenshot> _arrayOfScreenshots = new List<CScreenshot>();
 
         public CPCScreenshot AddScreenSnapshot(int screenNumber, Bitmap bm)
         {
-            _arrayOfScreenshots.Add(new CScreenSnapshot
+            _arrayOfScreenshots.Add(new CScreenshot
             {
                 ScreenNumber = screenNumber,
                 ScreenBitmap = bm
