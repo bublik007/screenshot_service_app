@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScreenshotServiceApp.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -27,6 +28,7 @@ namespace ScreenshotServiceApp.Model.Input.KeyInput
                 case Keys.Down:
                     //_isSnapshotMode = true;// TODO:: switch statemachine state
                     //break;
+                    CScreenshotServiceStateMachine.GetInstance().IsSnaphotMode = true;
                     return ACTION_TYPE.NONE;
                 // show snapshot
                 case Keys.Left: // the key is left arrow
@@ -39,7 +41,9 @@ namespace ScreenshotServiceApp.Model.Input.KeyInput
                     }*/
                     //break;
                     // TODO:: check statemachine
-                    return ACTION_TYPE.SHOW_SNAPSHOT;
+                    if(CScreenshotServiceStateMachine.GetInstance().IsSnaphotMode)
+                        return ACTION_TYPE.SHOW_SNAPSHOT;
+                    else return ACTION_TYPE.NONE;
                 default:
                     return ACTION_TYPE.NONE;
             }

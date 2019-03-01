@@ -66,7 +66,6 @@ namespace ScreenshotServiceApp.Model.Input
 
         private delegate IntPtr LowLevelKeyboardProc(int nCode, IntPtr wParam, IntPtr lParam);
 
-        private static bool _isSnapshotMode = false;
         /// <summary>
         /// 
         /// </summary>

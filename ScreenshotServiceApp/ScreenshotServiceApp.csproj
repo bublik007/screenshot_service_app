@@ -72,6 +72,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controller\CScreenshotServiceController.cs" />
+    <Compile Include="Controller\CScreenshotServiceStateMachine.cs" />
     <Compile Include="Model\Input\CAbstractInputListener.cs" />
     <Compile Include="Model\Input\KeyInput\CKeyDownAnalyzer.cs" />
     <Compile Include="Model\Input\KeyInput\CKeyEventAnalyzerFactory.cs" />
