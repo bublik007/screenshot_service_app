@@ -7,7 +7,6 @@ using System.IO;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Media.Imaging;
-using ScreenshotServiceApp.Model;
 using ScreenshotServiceApp.Model.Screenshot;
 
 namespace ScreenshotServiceApp.View
