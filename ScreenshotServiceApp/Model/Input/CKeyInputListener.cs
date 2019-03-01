@@ -23,7 +23,7 @@ namespace ScreenshotServiceApp.Model.Input
 
         internal static CKeyInputListener GetInstance()
         {
-            return (_instance == null) ? _instance = new CKeyInputListener() : _instance;
+            return _instance ?? (_instance = new CKeyInputListener());
         }
 
         internal override void EnableListener()
