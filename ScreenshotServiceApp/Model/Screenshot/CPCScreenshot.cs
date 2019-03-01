@@ -15,12 +15,7 @@ namespace ScreenshotServiceApp.Model
 
         public CPCScreenshot AddScreenSnapshot(int screenNumber, Bitmap bm)
         {
-            _arrayOfScreenshots.Add(new CScreenshot
-            {
-                ScreenNumber = screenNumber,
-                ScreenBitmap = bm
-
-            });
+            _arrayOfScreenshots.Add(new CScreenshot(screenNumber, bm));
             return this;
         }
 
