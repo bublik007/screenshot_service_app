@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ScreenshotServiceApp.Model.Screenshot;
+using System;
+using System.Collections;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -7,19 +9,19 @@ namespace ScreenshotServiceApp.Model
 {
     class CScreenshotServiceController
     {
-        public static CPCScreenshot TakeScreenshotOfAllScreens()
+        public static ArrayList TakeScreenshotOfAllScreens()
         {
-            CPCScreenshot workstationSnapshot = new CPCScreenshot();
+            ArrayList screenshotsOfAllPCScreens = new ArrayList();
             // getting all the screens presented at this workstation
             Screen[] Scrns = Screen.AllScreens;
             for (int i = 0; i < Scrns.Length; i++)
             {
                 Screen screen = Scrns[i];
                 Bitmap bm = TakeScreenshot(screen);
-                workstationSnapshot.AddScreenSnapshot(i, bm);
+                screenshotsOfAllPCScreens.Add(new CScreenshot(i, bm));
             }
             Console.WriteLine(">>>>> done taking a screenshot");
-            return workstationSnapshot;
+            return screenshotsOfAllPCScreens;
         }
 
         /// <summary>
