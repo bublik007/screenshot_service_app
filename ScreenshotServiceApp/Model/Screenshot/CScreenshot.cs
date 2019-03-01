@@ -6,7 +6,7 @@ namespace ScreenshotServiceApp.Model.Screenshot
 {
     public class CScreenshot
     {
-        private const int TIMESTAMP_RECTANGLE_WIDTH = 700, TIMESTAMP_RECTANGLE_HEIGHT = 50,
+        public const int TIMESTAMP_RECTANGLE_WIDTH = 700, TIMESTAMP_RECTANGLE_HEIGHT = 50,
                     ACTIVE_SCREEN_HIGHLIGHT_STROKE_WIDTH = 20;
 
         public int ScreenNumber { get; }

@@ -63,6 +63,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="CScreenshotUnitTest.cs" />
     <Compile Include="CScreenshotServiceControllerUnitTest.cs" />
     <Compile Include="CKeyEventAnalyzerFactoryUnitTest.cs" />
     <Compile Include="CKeyReleasedAnalyzerUnitTest.cs" />
