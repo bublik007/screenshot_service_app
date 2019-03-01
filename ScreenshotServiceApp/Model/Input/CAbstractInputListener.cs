@@ -1,7 +1,7 @@
 ﻿namespace ScreenshotServiceApp.Model.Input
 {
     internal delegate void UserActivityRequest(ACTION_TYPE activityType);
-    internal enum ACTION_TYPE { TAKE_SNAPSHOT, SHOW_SNAPSHOT, CLOSE_SNAPSHOT }
+    internal enum ACTION_TYPE { TAKE_SNAPSHOT, SHOW_SNAPSHOT, CLOSE_SNAPSHOT, NONE }
     
     abstract class CAbstractInputListener
     {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScreenshotServiceApp.Model.Input.KeyInput;
+using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -83,42 +84,21 @@ namespace ScreenshotServiceApp.Model.Input
             if (wParam == (IntPtr)WM_KEYDOWN)// when the key is pushed down
             {
                 int vkCode = Marshal.ReadInt32(lParam);
-                Keys pressedKey = (Keys)vkCode;
-                switch (pressedKey)
+                ACTION_TYPE action = new CKeyDownAnalyzer().AnalyzeKeyEvent((Keys)vkCode);
+                if (action != ACTION_TYPE.NONE)
                 {
-                    case Keys.PrintScreen:
-                        {
-                            Console.WriteLine("{0} blocked!", (Keys)vkCode);
-                            //start a separate thread to 
-                            if (_instance.OnUserActivityRequest != null)
-                                _instance.OnUserActivityRequest.BeginInvoke(ACTION_TYPE.TAKE_SNAPSHOT, null, null);// async mode
-                            Console.WriteLine("returning from hook!");
-                            return (IntPtr)1;// we are blocking further processing of the Printscreen. Is it actually good ? Probably not
-                        }
-                    case Keys.Down:
-                        _isSnapshotMode = true;
-                        break;
-                    // show snapshot
-                    case Keys.Left: // the key is left arrow
-                    case Keys.Right: // the key is right arrow
-                        if (_isSnapshotMode)
-                        {
-                            if (_instance.OnUserActivityRequest != null)
-                                _instance.OnUserActivityRequest.BeginInvoke(ACTION_TYPE.SHOW_SNAPSHOT, null, null);
-                            return (IntPtr)1;// we are blocking further processing of the Printscreen. Is it actually good ? Probably not
-                        }
-                        break;
+                    _instance.OnUserActivityRequest.BeginInvoke(action, null, null);
+                    return (IntPtr)1;
                 }
             }
             else if (wParam == (IntPtr)WM_KEYUP)// when a key is released
             {
                 int vkCode = Marshal.ReadInt32(lParam);
-                if (((Keys)vkCode == Keys.Down))// if the key is down arrow
+                ACTION_TYPE action = new CKeyReleasedAnalyzer().AnalyzeKeyEvent((Keys)vkCode);
+                if (action != ACTION_TYPE.NONE)
                 {
-                    _isSnapshotMode = false;
-                    if (_instance.OnUserActivityRequest != null)
-                        _instance.OnUserActivityRequest.BeginInvoke(ACTION_TYPE.CLOSE_SNAPSHOT, null, null);
-                    return (IntPtr)1;// we are blocking further processing of the key up event
+                    _instance.OnUserActivityRequest.BeginInvoke(action, null, null);
+                    return (IntPtr)1;
                 }
             }
             return CallNextHookEx(_hookID, nCode, wParam, lParam);
