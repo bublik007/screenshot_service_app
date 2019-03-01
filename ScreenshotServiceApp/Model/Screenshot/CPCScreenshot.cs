@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace ScreenshotServiceApp.Model
 {
-    class CWorkstationSnapshot : IEnumerable
+    class CPCScreenshot : IEnumerable
     {
         public class CScreenSnapshot 
         {
@@ -12,13 +12,13 @@ namespace ScreenshotServiceApp.Model
             public Bitmap ScreenBitmap { get; set; }
         }
 
-        public CWorkstationSnapshot()
+        public CPCScreenshot()
         { }
 
         // 1. array of images/URLs from each screen of the computer
         private List<CScreenSnapshot> _arrayOfScreenshots = new List<CScreenSnapshot>();
 
-        public CWorkstationSnapshot AddScreenSnapshot(int screenNumber, Bitmap bm)
+        public CPCScreenshot AddScreenSnapshot(int screenNumber, Bitmap bm)
         {
             _arrayOfScreenshots.Add(new CScreenSnapshot
             {

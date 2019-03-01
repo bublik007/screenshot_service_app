@@ -9,9 +9,9 @@ namespace ScreenshotServiceApp.Model
     {
         private const int TIMESTAMP_RECTANGLE_WIDTH = 700, TIMESTAMP_RECTANGLE_HEIGHT = 50,
                             ACTIVE_SCREEN_HIGHLIGHT_STROKE_WIDTH = 20;
-        public static CWorkstationSnapshot TakeScreenshotOfAllScreens()
+        public static CPCScreenshot TakeScreenshotOfAllScreens()
         {
-            CWorkstationSnapshot workstationSnapshot = new CWorkstationSnapshot();
+            CPCScreenshot workstationSnapshot = new CPCScreenshot();
             // getting all the screens presented at this workstation
             Screen[] Scrns = Screen.AllScreens;
             for (int i = 0; i < Scrns.Length; i++)

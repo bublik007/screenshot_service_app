@@ -4,7 +4,7 @@ using ScreenshotServiceApp.Model.Input;
 
 namespace ScreenshotServiceApp.ViewModel
 {
-    internal delegate void ShowSystemSnapshot(CWorkstationSnapshot snapshot);
+    internal delegate void ShowSystemSnapshot(CPCScreenshot snapshot);
     internal delegate void CloseSystemSnapshot();
     internal delegate void OnActivity(string message);
     
@@ -15,7 +15,7 @@ namespace ScreenshotServiceApp.ViewModel
         public static CloseSystemSnapshot CloseSnapshot;
         public static OnActivity ShowActivityMessage;
         // array list of all the taken screenshots
-        private static CWorkstationSnapshot _latestWorkstationSnapshot = null;
+        private static CPCScreenshot _latestWorkstationSnapshot = null;
 
         private List<CAbstractInputListener> _userInputListeners
                                         = new List<CAbstractInputListener>();

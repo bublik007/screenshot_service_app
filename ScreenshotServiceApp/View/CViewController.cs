@@ -13,8 +13,8 @@ namespace ScreenshotServiceApp.View
     internal static class CViewController
     {
         private static List<CScreenshotWindow> _openSnapshots = new List<CScreenshotWindow>();
-        private delegate void CDelegate(CWorkstationSnapshot snapshot);
-        public static void ShowSnapshots(CWorkstationSnapshot snapshot)
+        private delegate void CDelegate(CPCScreenshot snapshot);
+        public static void ShowSnapshots(CPCScreenshot snapshot)
         {
             var d = System.Windows.Application.Current.Dispatcher;
             if (!d.CheckAccess())
@@ -34,10 +34,10 @@ namespace ScreenshotServiceApp.View
             }
         }
 
-        private static void ShowWorkstationsSnaphots(CWorkstationSnapshot snapshot,
+        private static void ShowWorkstationsSnaphots(CPCScreenshot snapshot,
             Screen[] AllSystemScreens)
         {
-            foreach (CWorkstationSnapshot.CScreenSnapshot s in snapshot)
+            foreach (CPCScreenshot.CScreenSnapshot s in snapshot)
             {
                 try
                 {
