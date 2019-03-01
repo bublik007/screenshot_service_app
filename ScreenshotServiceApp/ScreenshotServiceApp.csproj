@@ -73,8 +73,9 @@
     </Compile>
     <Compile Include="Controller\CScreenshotServiceController.cs" />
     <Compile Include="Model\Input\CAbstractInputListener.cs" />
-    <Compile Include="Model\Snapshot\CWorkstationSnapshot.cs" />
-    <Compile Include="Model\Snapshot\CSnapshotController.cs" />
+    <Compile Include="Model\Screenshot\CPCScreenshot.cs" />
+    <Compile Include="Model\Screenshot\CScreenshot.cs" />
+    <Compile Include="Model\Screenshot\CScreenshotController.cs" />
     <Compile Include="Model\Input\CKeyInputListener.cs" />
     <Compile Include="View\CScreenshotWindow.xaml.cs">
       <DependentUpon>CScreenshotWindow.xaml</DependentUpon>

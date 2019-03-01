@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Media.Imaging;
 using ScreenshotServiceApp.Model;
+using ScreenshotServiceApp.Model.Screenshot;
 
 namespace ScreenshotServiceApp.View
 {
@@ -37,7 +38,7 @@ namespace ScreenshotServiceApp.View
         private static void ShowWorkstationsSnaphots(CPCScreenshot snapshot,
             Screen[] AllSystemScreens)
         {
-            foreach (CPCScreenshot.CScreenshot s in snapshot)
+            foreach (CScreenshot s in snapshot)
             {
                 try
                 {
