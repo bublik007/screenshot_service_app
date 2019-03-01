@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace ScreenshotServiceApp.Model
 {
-    class CScreenshotServiceController
+    public class CScreenshotServiceController
     {
         public static ArrayList TakeScreenshotOfAllScreens()
         {
@@ -30,7 +30,7 @@ namespace ScreenshotServiceApp.Model
         /// also the mouse pointer will be highlighted with a bright background.
         /// </summary>
         /// <param name="screen"></param>
-        private static Bitmap TakeScreenshot(Screen screen)
+        public static Bitmap TakeScreenshot(Screen screen)
         {
             Bitmap screenshot = new Bitmap(screen.Bounds.Width, screen.Bounds.Height);
             Graphics G = Graphics.FromImage(screenshot);
