@@ -16,9 +16,7 @@ namespace ScreenshotServiceApp.Model.Input.KeyInput
                     return ACTION_TYPE.NONE;
                 case Keys.Left: // the key is left arrow
                 case Keys.Right: // the key is right arrow
-                    if(CScreenshotServiceStateMachine.GetInstance().IsSnaphotMode)
-                        return ACTION_TYPE.SHOW_SNAPSHOT;
-                    else return ACTION_TYPE.NONE;
+                        return (CScreenshotServiceStateMachine.GetInstance().IsSnaphotMode) ? ACTION_TYPE.SHOW_SNAPSHOT : ACTION_TYPE.NONE;
                 default:
                     return ACTION_TYPE.NONE;
             }
