@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace ScreenshotServiceApp.Model.Input.KeyInput
 {
-    class CKeyDownAnalyzer : IKeyEventAnalyzer
+    public class CKeyDownAnalyzer : IKeyEventAnalyzer
     {
         public ACTION_TYPE AnalyzeKeyEvent(Keys pressedKey)
         {
