@@ -81,26 +81,17 @@ namespace ScreenshotServiceApp.Model.Input
             if (!(nCode >= 0))
                 return CallNextHookEx(_hookID, nCode, wParam, lParam);
 
-            if (wParam == (IntPtr)WM_KEYDOWN)// when the key is pushed down
+            IKeyEventAnalyzer analyzer = CKeyEventAnalyzerFactory.GetKeyEventAnalyzer(wParam);
+            if (analyzer != null)
             {
-                int vkCode = Marshal.ReadInt32(lParam);
-                ACTION_TYPE action = new CKeyDownAnalyzer().AnalyzeKeyEvent((Keys)vkCode);
+                ACTION_TYPE action = analyzer.AnalyzeKeyEvent((Keys)(Marshal.ReadInt32(lParam)));
                 if (action != ACTION_TYPE.NONE)
                 {
                     _instance.OnUserActivityRequest.BeginInvoke(action, null, null);
                     return (IntPtr)1;
                 }
             }
-            else if (wParam == (IntPtr)WM_KEYUP)// when a key is released
-            {
-                int vkCode = Marshal.ReadInt32(lParam);
-                ACTION_TYPE action = new CKeyReleasedAnalyzer().AnalyzeKeyEvent((Keys)vkCode);
-                if (action != ACTION_TYPE.NONE)
-                {
-                    _instance.OnUserActivityRequest.BeginInvoke(action, null, null);
-                    return (IntPtr)1;
-                }
-            }
+            
             return CallNextHookEx(_hookID, nCode, wParam, lParam);
         }
 
