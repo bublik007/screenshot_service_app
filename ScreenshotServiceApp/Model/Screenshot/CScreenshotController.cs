@@ -62,8 +62,10 @@ namespace ScreenshotServiceApp.Model
             g.FillRectangle(semitransparentLightGrayBrush, backgroundRect);
             g.DrawRectangle(new Pen(semitransparentLightGrayBrush), backgroundRect);
 
-            StringFormat format = new StringFormat();
-            format.Alignment = StringAlignment.Center;
+            StringFormat format = new StringFormat
+            {
+                Alignment = StringAlignment.Center
+            };
 
             g.DrawString(DateTime.Now.ToString(), 
                         new Font("Tahoma", 20), new SolidBrush(Color.FromArgb(128, 0, 0, 0)), 
