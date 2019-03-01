@@ -83,7 +83,7 @@ namespace ScreenshotServiceApp.Model.Input
                             Console.WriteLine("{0} blocked!", (Keys)vkCode);
                             //start a separate thread to 
                             if (_instance.OnUserActivityRequest != null)
-                                _instance.OnUserActivityRequest.BeginInvoke(USER_ACTIVITY_TYPE.TAKE_SNAPSHOT, null, null);// async mode
+                                _instance.OnUserActivityRequest.BeginInvoke(ACTION_TYPE.TAKE_SNAPSHOT, null, null);// async mode
                             Console.WriteLine("returning from hook!");
                             return (IntPtr)1;// we are blocking further processing of the Printscreen. Is it actually good ? Probably not
                         }
@@ -96,7 +96,7 @@ namespace ScreenshotServiceApp.Model.Input
                         if (_isSnapshotMode)
                         {
                             if (_instance.OnUserActivityRequest != null)
-                                _instance.OnUserActivityRequest.BeginInvoke(USER_ACTIVITY_TYPE.SHOW_SNAPSHOT, null, null);
+                                _instance.OnUserActivityRequest.BeginInvoke(ACTION_TYPE.SHOW_SNAPSHOT, null, null);
                             return (IntPtr)1;// we are blocking further processing of the Printscreen. Is it actually good ? Probably not
                         }
                         break;
@@ -109,7 +109,7 @@ namespace ScreenshotServiceApp.Model.Input
                 {
                     _isSnapshotMode = false;
                     if (_instance.OnUserActivityRequest != null)
-                        _instance.OnUserActivityRequest.BeginInvoke(USER_ACTIVITY_TYPE.CLOSE_SNAPSHOT, null, null);
+                        _instance.OnUserActivityRequest.BeginInvoke(ACTION_TYPE.CLOSE_SNAPSHOT, null, null);
                     return (IntPtr)1;// we are blocking further processing of the key up event
                 }
             }

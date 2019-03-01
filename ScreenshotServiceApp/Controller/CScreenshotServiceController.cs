@@ -34,19 +34,19 @@ namespace ScreenshotServiceApp.ViewModel
         }
 
         //called by CKeyInputListener
-        private void ProcessUserActivityRequest(USER_ACTIVITY_TYPE activityType)
+        private void ProcessUserActivityRequest(ACTION_TYPE activityType)
         {
             switch(activityType)
             {
-                case USER_ACTIVITY_TYPE.TAKE_SNAPSHOT:
+                case ACTION_TYPE.TAKE_SNAPSHOT:
                     _latestWorkstationSnapshot = Model.CScreenshotServiceController.TakeScreenshotOfAllScreens();
                     ShowActivityMessage?.Invoke("snapshot +1");
                     break;
-                case USER_ACTIVITY_TYPE.SHOW_SNAPSHOT:
+                case ACTION_TYPE.SHOW_SNAPSHOT:
                     if (_latestWorkstationSnapshot != null)
                         ShowSnapshot.Invoke(_latestWorkstationSnapshot);
                     break;
-                case USER_ACTIVITY_TYPE.CLOSE_SNAPSHOT:
+                case ACTION_TYPE.CLOSE_SNAPSHOT:
                     CloseSnapshot?.Invoke();
                     break;
             }
