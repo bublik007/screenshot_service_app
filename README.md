@@ -26,23 +26,7 @@ The code is intended to be used on Windows OS. In order to compile and run the s
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-An example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-An example
-```
+The project called UnitTests contains unit tests that cover the majority of the functions in the main code. The tests were written using xUnit framework. The tests can be launched in Visual Studio. Part of the functionality, namely related to GUI and keyboard events, is not being tested since I could not find a straightforward way to test them. I might get back to implementing tests if i get some inspiration.
 
 ## Deployment
 
@@ -95,6 +79,10 @@ Used commit types:
     <tr>
       <td>Doc</td>
       <td>Documentation update</td>
+    </tr>
+     <tr>
+      <td>UTest</td>
+      <td>Unit tests</td>
     </tr>
   </tbody>
 </table>
