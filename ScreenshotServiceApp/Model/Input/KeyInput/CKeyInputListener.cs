@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace ScreenshotServiceApp.Model.Input
 {
-    class CKeyInputListener : CAbstractInputListener
+    public class CKeyInputListener : CAbstractInputListener
     {
         // see for more info the following example>>> http://rsdn.ru/forum/info/FAQ.dotnet.hooks
         // and the following explanations about hooks>>> https://docs.microsoft.com/en-us/windows/desktop/winmsg/about-hooks
