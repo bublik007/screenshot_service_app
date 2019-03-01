@@ -12,11 +12,11 @@ namespace ScreenshotServiceApp.ViewModel
     {
         public static OnActivity ShowActivityMessage;
         // array list of all the taken screenshots
-        private static ArrayList _latestWorkstationSnapshot = null;
+        public static ArrayList _latestWorkstationSnapshot = null;
 
         private List<CAbstractInputListener> _userInputListeners
                                         = new List<CAbstractInputListener>();
-        internal CScreenshotServiceController()
+        public CScreenshotServiceController()
         {
             CAbstractInputListener _userInputListener = CKeyInputListener.Initialize(ProcessUserActivityRequest);
             _userInputListeners.Add(_userInputListener);
@@ -29,7 +29,7 @@ namespace ScreenshotServiceApp.ViewModel
         }
 
         //called by CKeyInputListener
-        private void ProcessUserActivityRequest(ACTION_TYPE activityType)
+        public void ProcessUserActivityRequest(ACTION_TYPE activityType)
         {
             switch(activityType)
             {

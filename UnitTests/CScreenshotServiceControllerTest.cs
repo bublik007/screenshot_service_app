@@ -1,23 +1,16 @@
 ﻿using Xunit;
-using ScreenshotServiceApp.Controller;
+using ScreenshotServiceApp.ViewModel;
+using ScreenshotServiceApp.Model.Input;
 
 namespace UnitTests
 {
     public class CScreenshotServiceControllerTest
     {
         [Fact]
-        public void TestIsSnapshotMode()
+        public void TestTakeSnapshotActivityRequest()
         {
-            CScreenshotServiceStateMachine sm = new CScreenshotServiceStateMachine();
-            sm.IsSnaphotMode = true;
-            Assert.True(sm.IsSnaphotMode);
-        }
-
-        [Fact]
-        public void TestIsSnapshotModeInInitialization()
-        {
-            CScreenshotServiceStateMachine sm = new CScreenshotServiceStateMachine();
-            Assert.False(sm.IsSnaphotMode);
+            new CScreenshotServiceController().ProcessUserActivityRequest(ACTION_TYPE.TAKE_SNAPSHOT);
+            Assert.True(CScreenshotServiceController._latestWorkstationSnapshot != null);
         }
     }
 }
