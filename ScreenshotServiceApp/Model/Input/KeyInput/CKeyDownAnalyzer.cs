@@ -16,31 +16,12 @@ namespace ScreenshotServiceApp.Model.Input.KeyInput
             switch (pressedKey)
             {
                 case Keys.PrintScreen:
-                    {
-                        /*Console.WriteLine("{0} blocked!", (Keys)vkCode);
-                        //start a separate thread to 
-                        if (_instance.OnUserActivityRequest != null)
-                            _instance.OnUserActivityRequest.BeginInvoke(, null, null);// async mode
-                        Console.WriteLine("returning from hook!");
-                        return (IntPtr)1;// we are blocking further processing of the Printscreen. Is it actually good ? Probably not*/
-                        return ACTION_TYPE.TAKE_SNAPSHOT;
-                    }
+                    return ACTION_TYPE.TAKE_SNAPSHOT;
                 case Keys.Down:
-                    //_isSnapshotMode = true;// TODO:: switch statemachine state
-                    //break;
                     CScreenshotServiceStateMachine.GetInstance().IsSnaphotMode = true;
                     return ACTION_TYPE.NONE;
-                // show snapshot
                 case Keys.Left: // the key is left arrow
                 case Keys.Right: // the key is right arrow
-                    /*if (_isSnapshotMode)
-                    {
-                        if (_instance.OnUserActivityRequest != null)
-                            _instance.OnUserActivityRequest.BeginInvoke(ACTION_TYPE.SHOW_SNAPSHOT, null, null);
-                        return (IntPtr)1;// we are blocking further processing of the Printscreen. Is it actually good ? Probably not
-                    }*/
-                    //break;
-                    // TODO:: check statemachine
                     if(CScreenshotServiceStateMachine.GetInstance().IsSnaphotMode)
                         return ACTION_TYPE.SHOW_SNAPSHOT;
                     else return ACTION_TYPE.NONE;
