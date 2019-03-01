@@ -6,6 +6,7 @@ namespace ScreenshotServiceApp.View
 {
     class CSystemTrayIcon
     {
+        private static readonly string ICON_TITLE = "Screenshot Service App";
         public delegate void OnExit();
         public static OnExit onExitDelegate;
 
@@ -19,7 +20,7 @@ namespace ScreenshotServiceApp.View
                 Visible = true
             };
 
-            ni.Text = "Screenshot Service App";
+            ni.Text = ICON_TITLE;
 
             /// CREATING THE MENU /////
             ContextMenu contextMenu1 = new ContextMenu();
@@ -45,7 +46,7 @@ namespace ScreenshotServiceApp.View
         public static void ShowNotification(String message)
         {
             ni.BalloonTipIcon = ToolTipIcon.Info;
-            ni.BalloonTipTitle = "Screenshot Service App";
+            ni.BalloonTipTitle = ICON_TITLE;
             ni.BalloonTipText = message;
 
             ni.ShowBalloonTip(5000);
