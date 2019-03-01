@@ -5,10 +5,10 @@ using ScreenshotServiceApp.View;
 
 namespace ScreenshotServiceApp.ViewModel
 {
-    internal delegate void OnActivity(string message);
+    public delegate void OnActivity(string message);
     
     // central class of the application 
-    class CScreenshotServiceController
+    public class CScreenshotServiceController
     {
         public static OnActivity ShowActivityMessage;
         // array list of all the taken screenshots
