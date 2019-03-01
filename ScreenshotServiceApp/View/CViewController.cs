@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -14,14 +15,14 @@ namespace ScreenshotServiceApp.View
     internal static class CViewController
     {
         private static List<CScreenshotWindow> _openSnapshots = new List<CScreenshotWindow>();
-        private delegate void CDelegate(CPCScreenshot snapshot);
-        public static void ShowSnapshots(CPCScreenshot snapshot)
+        private delegate void CDelegate(ArrayList screenshots);
+        public static void ShowSnapshots(ArrayList screenshots)
         {
             var d = System.Windows.Application.Current.Dispatcher;
             if (!d.CheckAccess())
             {
                 CDelegate handler = ShowSnapshots;
-                d.Invoke(handler, new object[] { snapshot });
+                d.Invoke(handler, new object[] { screenshots });
             }
             else
             {
@@ -31,11 +32,11 @@ namespace ScreenshotServiceApp.View
                     foreach (Screen s in AllSystemScreens)
                         _openSnapshots.Add(new CScreenshotWindow());
                 }
-                ShowWorkstationsSnaphots(snapshot, AllSystemScreens);// FIXME
+                ShowWorkstationsSnaphots(screenshots, AllSystemScreens);// FIXME
             }
         }
 
-        private static void ShowWorkstationsSnaphots(CPCScreenshot snapshot,
+        private static void ShowWorkstationsSnaphots(ArrayList snapshot,
             Screen[] AllSystemScreens)
         {
             foreach (CScreenshot s in snapshot)
