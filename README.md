@@ -60,7 +60,44 @@ In general, I do not expect anyone to contribute to this project. However, if yo
 
 ## Versioning
 
-For versioning, I just use incremental numbers in the format "v_X_Y", where v stands for "version" and X, Y are incremental numbers, e.g. "v_1_0" is the initial version of the code before any refactoring. The version "v_2_0" is a new release containing all the refactoring done in the scope of the WASp software course.
+For versioning, I just use incremental numbers in the format "vX.Y", where v stands for "version" and X, Y are incremental numbers, e.g. "v1.0" is the initial version of the code before any refactoring. The version "v2.0" is a new release containing all the refactoring done in the scope of the WASP software course.
+
+When commenting commits, I tend to stick to the following message template:
+
+```
+Type: A short sentence about the commit
+
+[Optional] description
+```
+
+Used commit types:
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Feature</td>
+      <td>A new feature</td>
+    </tr>
+    <tr>
+      <td>Refactor</td>
+      <td>Code enhancement</td>
+    </tr>
+    <tr>
+      <td>Bugfix</td>
+      <td>A bug fix</td>
+    </tr>
+    <tr>
+      <td>Doc</td>
+      <td>Documentation update</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Authors
 
@@ -68,7 +105,7 @@ For versioning, I just use incremental numbers in the format "v_X_Y", where v st
 
 ## License
 
-To avoid misunderstandings, please let me know if you want to use this code for your own purposes. I might agree on that for a chocolate :) 
+To avoid misunderstandings, please let me know if you want to use this code for your own purposes. Due to the company policies, I am not supposed to make the code public. 
 
 ## Acknowledgments
 
