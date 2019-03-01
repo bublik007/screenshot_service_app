@@ -2,7 +2,7 @@
 
 namespace ScreenshotServiceApp.Model.Input.KeyInput
 {
-    interface IKeyEventAnalyzer
+    public interface IKeyEventAnalyzer
     {
         ACTION_TYPE AnalyzeKeyEvent(Keys pressedKey);
     }

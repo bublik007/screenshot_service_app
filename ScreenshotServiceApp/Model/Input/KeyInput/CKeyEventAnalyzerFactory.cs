@@ -2,7 +2,7 @@
 
 namespace ScreenshotServiceApp.Model.Input.KeyInput
 {
-    class CKeyEventAnalyzerFactory
+    public class CKeyEventAnalyzerFactory
     {
         private const int WM_KEYDOWN = 0x0100,
         WM_KEYUP = 0x0101;
