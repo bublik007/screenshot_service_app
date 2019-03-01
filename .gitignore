@@ -3,3 +3,7 @@
 /ScreenshotServiceApp/bin
 /.vs
 /ScreenshotServiceApp/.vs
+/UnitTests/obj
+
+/UnitTests/bin
+/packages
