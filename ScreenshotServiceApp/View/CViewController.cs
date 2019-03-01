@@ -11,9 +11,9 @@ using ScreenshotServiceApp.Model.Screenshot;
 
 namespace ScreenshotServiceApp.View
 {
-    internal static class CViewController
+    public static class CViewController
     {
-        private static List<CScreenshotWindow> _openSnapshots = new List<CScreenshotWindow>();
+        public static List<CScreenshotWindow> _openSnapshots = new List<CScreenshotWindow>();
         private delegate void CDelegate(ArrayList screenshots);
         public static void ShowSnapshots(ArrayList screenshots)
         {
@@ -57,7 +57,7 @@ namespace ScreenshotServiceApp.View
             }
         }
 
-        private static BitmapSource ToWpfBitmap(this Bitmap bitmap)
+        public static BitmapSource ToWpfBitmap(this Bitmap bitmap)
         {
             using (MemoryStream stream = new MemoryStream())
             {
