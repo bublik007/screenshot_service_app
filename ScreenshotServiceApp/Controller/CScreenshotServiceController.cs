@@ -1,18 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using ScreenshotServiceApp.Model.Input;
+using ScreenshotServiceApp.View;
 
 namespace ScreenshotServiceApp.ViewModel
 {
-    internal delegate void ShowSystemSnapshot(ArrayList snapshot);
-    internal delegate void CloseSystemSnapshot();
     internal delegate void OnActivity(string message);
     
     // central class of the application 
     class CScreenshotServiceController
     {
-        public static ShowSystemSnapshot ShowSnapshot;
-        public static CloseSystemSnapshot CloseSnapshot;
         public static OnActivity ShowActivityMessage;
         // array list of all the taken screenshots
         private static ArrayList _latestWorkstationSnapshot = null;
@@ -44,10 +41,10 @@ namespace ScreenshotServiceApp.ViewModel
                     break;
                 case ACTION_TYPE.SHOW_SNAPSHOT:
                     if (_latestWorkstationSnapshot != null)
-                        ShowSnapshot.Invoke(_latestWorkstationSnapshot);
+                        CViewController.ShowSnapshots(_latestWorkstationSnapshot);
                     break;
                 case ACTION_TYPE.CLOSE_SNAPSHOT:
-                    CloseSnapshot?.Invoke();
+                    CViewController.CloseSnapshots();
                     break;
             }
         }

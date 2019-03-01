@@ -15,8 +15,6 @@ namespace ScreenshotServiceApp
 
         static void InitializeSubscriptionToEvents()
         {
-            CScreenshotServiceController.ShowSnapshot += CViewController.ShowSnapshots;
-            CScreenshotServiceController.CloseSnapshot += CViewController.CloseSnapshots;
             CScreenshotServiceController.ShowActivityMessage += CSystemTrayIcon.ShowNotification;
         }
         App()
