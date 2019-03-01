@@ -1,6 +1,6 @@
 ﻿namespace ScreenshotServiceApp.Controller
 {
-    class CScreenshotServiceStateMachine
+    public class CScreenshotServiceStateMachine
     {
         private static CScreenshotServiceStateMachine _instance;
         public static CScreenshotServiceStateMachine GetInstance()
