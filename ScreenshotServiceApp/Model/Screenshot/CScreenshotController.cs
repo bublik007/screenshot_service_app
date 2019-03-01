@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace ScreenshotServiceApp.Model
 {
-    public class CScreenshotServiceController
+    public class CScreenshotController
     {
         public static ArrayList TakeScreenshotOfAllScreens()
         {

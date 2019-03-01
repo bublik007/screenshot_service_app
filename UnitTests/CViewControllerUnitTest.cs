@@ -14,7 +14,7 @@ namespace UnitTests
         public void TestBitmapToWPFSourceConversion()
         {
             Screen[] screens = Screen.AllScreens;
-            Bitmap bm = CScreenshotServiceController.TakeScreenshot(screens[0]);
+            Bitmap bm = CScreenshotController.TakeScreenshot(screens[0]);
 
             BitmapSource bms = CViewController.ToWpfBitmap(bm);
             Assert.True(bms != null);// FIXME: may be something like this could work: color == Color.FromArgb(128, 128, 128, 128) ?
@@ -23,7 +23,7 @@ namespace UnitTests
         [Fact]
         public void TestShowSnapshots()
         {
-            ArrayList list = CScreenshotServiceController.TakeScreenshotOfAllScreens();
+            ArrayList list = CScreenshotController.TakeScreenshotOfAllScreens();
             CViewController.ShowSnapshots(list);
             Assert.True(true);// FIXME:: hard to test whether windows were actually open because of the threads
         }

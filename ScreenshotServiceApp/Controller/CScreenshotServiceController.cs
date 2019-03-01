@@ -34,7 +34,7 @@ namespace ScreenshotServiceApp.ViewModel
             switch(activityType)
             {
                 case ACTION_TYPE.TAKE_SNAPSHOT:
-                    _latestWorkstationSnapshot = Model.CScreenshotServiceController.TakeScreenshotOfAllScreens();
+                    _latestWorkstationSnapshot = Model.CScreenshotController.TakeScreenshotOfAllScreens();
                     ShowActivityMessage?.Invoke("snapshot +1");
                     break;
                 case ACTION_TYPE.SHOW_SNAPSHOT:

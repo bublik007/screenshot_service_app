@@ -11,7 +11,7 @@ namespace UnitTests
         [Fact]
         public void TestTakeScreenshotOfAllScreens()
         {
-            ArrayList screenshots = CScreenshotServiceController.TakeScreenshotOfAllScreens();
+            ArrayList screenshots = CScreenshotController.TakeScreenshotOfAllScreens();
             Assert.True(screenshots.Count>0);
         }
 
@@ -19,7 +19,7 @@ namespace UnitTests
         public void TestTakeScreenshot()
         {
             Screen[] screens = Screen.AllScreens;
-            Bitmap screenshot = CScreenshotServiceController.TakeScreenshot(screens[0]);
+            Bitmap screenshot = CScreenshotController.TakeScreenshot(screens[0]);
             Assert.False(screenshot.Size.IsEmpty); // This is indeed not a proper way to test whether the screenshot was actually taken. But better than nothing 
         }
     }

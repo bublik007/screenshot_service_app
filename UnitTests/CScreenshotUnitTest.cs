@@ -12,7 +12,7 @@ namespace UnitTests
         public void TestScreenshotInitialization()
         {
             Screen[] screens = Screen.AllScreens;
-            Bitmap bm = CScreenshotServiceController.TakeScreenshot(screens[0]);
+            Bitmap bm = CScreenshotController.TakeScreenshot(screens[0]);
             CScreenshot screenshot = new CScreenshot(0, bm);
             int x = (bm.Width - CScreenshot.TIMESTAMP_RECTANGLE_WIDTH) / 2;
             int y = (bm.Height - CScreenshot.TIMESTAMP_RECTANGLE_HEIGHT) / 2;
