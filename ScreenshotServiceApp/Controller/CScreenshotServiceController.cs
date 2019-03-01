@@ -18,9 +18,7 @@ namespace ScreenshotServiceApp.ViewModel
                                         = new List<CAbstractInputListener>();
         internal CScreenshotServiceController()
         {
-            CAbstractInputListener _userInputListener = CKeyInputListener.GetInstance();
-            _userInputListener.EnableListener();
-            _userInputListener.OnUserActivityRequest += ProcessUserActivityRequest;
+            CAbstractInputListener _userInputListener = CKeyInputListener.Initialize(ProcessUserActivityRequest);
             _userInputListeners.Add(_userInputListener);
         }
 

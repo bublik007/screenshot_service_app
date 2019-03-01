@@ -19,9 +19,17 @@ namespace ScreenshotServiceApp.Model.Input
 
         private static CKeyInputListener _instance = null;
 
+        public static CKeyInputListener Initialize(UserActivityRequest foo)
+        {
+            CKeyInputListener listener = GetInstance();
+            listener.EnableListener();
+            listener.OnUserActivityRequest += foo;
+            return listener;
+        }
+
         private CKeyInputListener(){}
 
-        internal static CKeyInputListener GetInstance()
+        private static CKeyInputListener GetInstance()
         {
             return _instance ?? (_instance = new CKeyInputListener());
         }
