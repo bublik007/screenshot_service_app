@@ -10,9 +10,7 @@ namespace ScreenshotServiceApp.Model.Input
     {
         // see for more info the following example>>> http://rsdn.ru/forum/info/FAQ.dotnet.hooks
         // and the following explanations about hooks>>> https://docs.microsoft.com/en-us/windows/desktop/winmsg/about-hooks
-        private const int WH_KEYBOARD_LL = 13,//The WH_KEYBOARD_LL hook enables you to monitor keyboard input events about to be posted in a thread input queue.
-            WM_KEYDOWN = 0x0100,
-            WM_KEYUP = 0x0101;
+        private const int WH_KEYBOARD_LL = 13;//The WH_KEYBOARD_LL hook enables you to monitor keyboard input events about to be posted in a thread input queue.
 
         private static IntPtr _hookID = IntPtr.Zero;
 
