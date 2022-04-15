@@ -1,5 +1,5 @@
 # Screenshot Service App
-The repository contains a C# background service app that, in response to a certain key press, takes a screenshot and adds a timestamp to it; when another key is pressed and while it is being hold, the app shows the taken screenshot full screen. This program is an extraction of a more sophisticated system that I am developing in the scope of my industrial PhD research project. The system is intended to facilitate human-computer interaction in industrial control rooms. Due to the company policies, I cannot reveal more details about the original system. 
+The repository contains a C# background service app that, in response to a certain key press, takes a screenshot and adds a timestamp to it; when another key is pressed and while it is being hold, the app shows the taken screenshot full screen. This program is a part of a more complex system that is intended to facilitate the workflows of operators in control rooms with many overview screens.
 
 ## Getting Started
 
